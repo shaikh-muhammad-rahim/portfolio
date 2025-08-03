@@ -1,0 +1,1333 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sharad Aeshi | Freelance Web Designer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* General Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f7fafc;
+        color: #2d3748;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* Navigation */
+      nav {
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 4rem;
+      }
+
+      .logo {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #4f46e5;
+      }
+
+      .nav-links {
+        display: none;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: #4a5568;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #4f46e5;
+      }
+
+      .mobile-menu-button {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      @media (min-width: 768px) {
+        .nav-links {
+          display: flex;
+        }
+        .mobile-menu-button {
+          display: none;
+        }
+      }
+
+      /* Hero Section */
+      #home {
+        padding: 5rem 0;
+        background: linear-gradient(to right, #eef2ff, #e0f2fe);
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+      }
+
+      .hero-text {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .hero-text h1 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        animation: fadeIn 0.5s ease-in;
+      }
+
+      .hero-text h1 span {
+        color: #4f46e5;
+      }
+
+      .hero-text p {
+        font-size: 1.25rem;
+        color: #4a5568;
+        margin-bottom: 2rem;
+        animation: fadeIn 0.5s ease-in 0.2s both;
+      }
+
+      .hero-button {
+        background-color: #4f46e5;
+        color: #ffffff;
+        font-weight: 500;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        animation: fadeIn 0.5s ease-in 0.4s both;
+      }
+
+      .hero-button:hover {
+        background-color: #4338ca;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .hero-image {
+        width: 16rem;
+        height: 16rem;
+        background-color: #e0e7ff;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @media (min-width: 768px) {
+        .hero-content {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        .hero-text {
+          width: 50%;
+          text-align: left;
+          margin-bottom: 0;
+        }
+        .hero-image {
+          width: 24rem;
+          height: 24rem;
+        }
+        .hero-text h1 {
+          font-size: 3rem;
+        }
+      }
+
+      /* About Section */
+      #about {
+        padding: 5rem 0;
+        background-color: #ffffff;
+      }
+
+      #about h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .about-content {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .about-image {
+        width: 20rem;
+        height: 20rem;
+        background-color: #edf2f7;
+        border-radius: 0.5rem;
+        /* overflow: hidden; */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+         top:  -10px;
+      }
+
+      .about-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .about-text {
+        text-align: center;
+      }
+
+      .about-text p {
+        font-size: 1.125rem;
+        color: #4a5568;
+        margin-bottom: 1.5rem;
+      }
+
+      .about-text h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+      }
+
+      .skill {
+        background-color: #edf2f7;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+
+      @media (min-width: 768px) {
+        .about-content {
+          flex-direction: row;
+          align-items: center;
+        }
+        .about-image {
+          width: 33.33%;
+        }
+        .about-text {
+          width: 66.67%;
+          text-align: left;
+        }
+        .skills {
+          justify-content: flex-start;
+        }
+      }
+
+      /* Services Section */
+      #services {
+        padding: 5rem 0;
+        background-color: #f7fafc;
+      }
+
+      #services h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      #services p {
+        font-size: 1.125rem;
+        color: #4a5568;
+        text-align: center;
+        margin-bottom: 3rem;
+        max-width: 32rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .service-card {
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s;
+      }
+
+      .service-card:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .service-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+        background-color: #e0e7ff;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-icon svg {
+        width: 2rem;
+        height: 2rem;
+        color: #4f46e5;
+      }
+
+      .service-card h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+
+      .service-card p {
+        font-size: 1rem;
+        color: #4a5568;
+      }
+
+      @media (min-width: 768px) {
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .services-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      /* Portfolio Section */
+      #portfolio {
+        padding: 5rem 0;
+        background-color: #ffffff;
+      }
+
+      #portfolio h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      #portfolio p {
+        font-size: 1.125rem;
+        color: #4a5568;
+        text-align: center;
+        margin-bottom: 3rem;
+        max-width: 32rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .portfolio-card {
+        background-color: #ffffff;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s;
+      }
+
+      .portfolio-card:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .portfolio-image {
+        height: 12rem;
+        overflow: hidden;
+        background-color: #edf2f7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .portfolio-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .portfolio-content {
+        padding: 1.5rem;
+      }
+
+      .portfolio-content h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .portfolio-content p {
+        font-size: 1rem;
+        color: #4a5568;
+        margin-bottom: 1rem;
+      }
+
+      .portfolio-content button {
+        background: none;
+        border: none;
+        color: #4f46e5;
+        font-weight: 500;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+
+      .portfolio-content button:hover {
+        color: #4338ca;
+      }
+
+      .portfolio-button {
+        display: block;
+        margin: 3rem auto 0;
+        padding: 0.5rem 1.5rem;
+        border: 1px solid #4f46e5;
+        background-color: transparent;
+        color: #4f46e5;
+        font-weight: 500;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .portfolio-button:hover {
+        background-color: #4f46e5;
+        color: #ffffff;
+      }
+
+      @media (min-width: 768px) {
+        .portfolio-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .portfolio-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      /* Testimonials Section */
+      .testimonials {
+        padding: 5rem 0;
+        background-color: #f7fafc;
+      }
+
+      .testimonials h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .testimonial-card {
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonial-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .testimonial-avatar {
+        width: 3rem;
+        height: 3rem;
+        background-color: #e2e8f0;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 1rem;
+      }
+
+      .testimonial-avatar svg {
+        width: 100%;
+        height: 100%;
+        color: #a0aec0;
+      }
+
+      .testimonial-info h4 {
+        font-weight: 600;
+      }
+
+      .testimonial-info p {
+        font-size: 0.875rem;
+        color: #4a5568;
+      }
+
+      .testimonial-card p {
+        font-size: 1rem;
+        color: #4a5568;
+        font-style: italic;
+      }
+
+      .testimonial-rating {
+        display: flex;
+        gap: 0.25rem;
+        margin-top: 1rem;
+      }
+
+      .testimonial-rating svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: #facc15;
+      }
+
+      @media (min-width: 768px) {
+        .testimonials-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* Contact Section */
+      #contact {
+        padding: 5rem 0;
+        background-color: #ffffff;
+      }
+
+      #contact h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      #contact p {
+        font-size: 1.125rem;
+        color: #4a5568;
+        text-align: center;
+        margin-bottom: 3rem;
+        max-width: 32rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .contact-content {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      }
+
+      .contact-form {
+        width: 100%;
+      }
+
+      .contact-form div {
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-form label {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #4a5568;
+        margin-bottom: 0.25rem;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        transition: border-color 0.3s, box-shadow 0.3s;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: #6366f1;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        outline: none;
+      }
+
+      .contact-form textarea {
+        resize: vertical;
+      }
+
+      .contact-form button {
+        width: 100%;
+        background-color: #4f46e5;
+        color: #ffffff;
+        font-weight: 500;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s;
+      }
+
+      .contact-form button:hover {
+        background-color: #4338ca;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .contact-info {
+        background-color: #f7fafc;
+        padding: 2rem;
+        border-radius: 0.75rem;
+        height: 100%;
+      }
+
+      .contact-info h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-item svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        color: #4f46e5;
+        margin-right: 1rem;
+        margin-top: 0.25rem;
+      }
+
+      .contact-item h4 {
+        font-weight: 500;
+        color: #1a202c;
+      }
+
+      .contact-item p {
+        font-size: 1rem;
+        color: #4a5568;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .social-link {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: #edf2f7;
+        border-radius: 50%;
+        display: 0px;
+        align-items: center;
+        justify-content: center;
+        color: #4a5568;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .social-link:hover {
+        background-color: #e0e7ff;
+        color: #4f46e5;
+      }
+
+      .social-link svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      @media (min-width: 768px) {
+        .contact-content {
+          flex-direction: row;
+        }
+        .contact-form,
+        .contact-info {
+          width: 50%;
+        }
+      }
+
+      /* Footer */
+      footer {
+        background-color: #1a202c;
+        color: #ffffff;
+        padding: 2rem 0;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .footer-logo {
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .footer-links a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: #a5b4fc;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #4a5568;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        text-align: center;
+        font-size: 0.875rem;
+        color: #a0aec0;
+      }
+
+      @media (min-width: 768px) {
+        .footer-content {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body cz-shortcut-listen="true">
+    <!-- Navigation -->
+    <nav>
+      <div class="container">
+        <div class="logo">S.M RAHIM</div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <button class="mobile-menu-button">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Hi, I'm <span> SM.RAHIM  </span></h1>
+            <p>
+              I design and build beautifuloraan System: beautiful, responsive
+              websites
+            </p>
+            <button class="hero-button">Hire Me</button>
+          </div>
+          <div class="hero-image">
+            <img
+              src="./111.jpg"
+              alt="sharad"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <div class="about-image">
+            <img
+              src="./222.jpg"
+              alt="me"
+            />
+          </div>
+          <div class="about-text">
+            <p>
+              I'm a passionate freelance web designer and developer with 7+
+              years of experience creating digital experiences that are both
+              beautiful and functional. My approach combines aesthetic design
+              with technical expertise to deliver websites that not only look
+              great but perform exceptionally well. I specialize in creating
+              responsive, user-friendly interfaces that help businesses
+              establish a strong online presence.
+            </p>
+            <div>
+              <h3>My Skills</h3>
+              <div class="skills">
+                <span class="skill">HTML5</span>
+                <span class="skill">CSS3</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">React.js</span>
+                <span class="skill">TailwindCSS</span>
+                <span class="skill">Figma</span>
+                <span class="skill">UI/UX Design</span>
+                <span class="skill">Responsive Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="container">
+        <h2>My Services</h2>
+        <p>
+          I offer a range of services to help your business establish a strong
+          online presence
+        </p>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                ></path>
+              </svg>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>
+              Creating intuitive and visually appealing user interfaces that
+              enhance user experience and drive engagement.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </div>
+            <h3>Website Design</h3>
+            <p>
+              Custom website designs tailored to your brand identity and
+              business goals, ensuring a memorable online presence.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                ></path>
+              </svg>
+            </div>
+            <h3>Front-end Development</h3>
+            <p>
+              Building responsive, high-performance websites with clean,
+              maintainable code using modern technologies.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </div>
+            <h3>Responsive Design</h3>
+            <p>
+              Ensuring your website looks and functions perfectly on all
+              devices, from desktop to mobile.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+      <div class="container">
+        <h2>My Portfolio</h2>
+        <p>Some of my recent projects that showcase my skills and expertise</p>
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img
+                src="https://images.pexels.com/photos/8938676/pexels-photo-8938676.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="portfolio-content">
+              <h3>E-commerce Website</h3>
+              <p>
+                A modern e-commerce platform with intuitive navigation and
+                seamless checkout experience.
+              </p>
+              <button>View Project →</button>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img
+                src="https://images.pexels.com/photos/106344/pexels-photo-106344.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="portfolio-content">
+              <h3>Corporate Dashboard</h3>
+              <p>
+                A data visualization dashboard for business analytics with
+                interactive charts and reports.
+              </p>
+              <button>View Project →</button>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img
+                src="https://images.pexels.com/photos/6576275/pexels-photo-6576275.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="portfolio-content">
+              <h3>Travel Blog</h3>
+              <p>
+                A visually stunning travel blog with immersive photography and
+                engaging content layout.
+              </p>
+              <button>View Project →</button>
+            </div>
+          </div>
+        </div>
+        <button class="portfolio-button">View All Projects</button>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <div class="container">
+        <h2>What Clients Say</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+              <div class="testimonial-info">
+                <h4>Sarah Johnson</h4>
+                <p>CEO, TechSolutions</p>
+              </div>
+            </div>
+            <p>
+              "Sharad transformed our outdated website into a modern,
+              user-friendly platform that has significantly increased our online
+              conversions. His attention to detail and creative approach made
+              all the difference."
+            </p>
+            <div class="testimonial-rating">
+              <svg
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                ></path>
+              </svg>
+              <svg
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                ></path>
+              </svg>
+              <svg
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                Five stars...
+              </svg>
+              <svg
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                Five stars...
+              </svg>
+              <svg
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                Five stars...
+              </svg>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+              <div class="testimonial-info">
+                <h4>Michael Chen</h4>
+                <p>Marketing Director, GreenLeaf</p>
+              </div>
+            </div>
+            <p>
+              "Working with Sharad was a pleasure. He delivered our project on
+              time and exceeded our expectations with his creative solutions.
+              The website he built for us has become our most valuable marketing
+              asset."
+            </p>
+            <div class="testimonial-rating">
+              <svg
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                Five stars...
+              </svg>
+              <svg
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                Five stars...
+              </svg>
+              <svg
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                Five stars...
+              </svg>
+              <svg
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                Five stars...
+              </svg>
+              <svg
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                Five stars...
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2>Get In Touch</h2>
+        <p>
+          Have a project in mind or want to discuss potential collaboration?
+          Feel free to reach out!
+        </p>
+        <div class="contact-content">
+          <form class="contact-form">
+            <div>
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" />
+            </div>
+            <div>
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="john@example.com"
+              />
+            </div>
+            <div>
+              <label for="message">Your Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Tell me about your project..."
+              ></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+          </form>
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <div class="contact-item">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+              <div>
+                <h4>Email</h4>
+                <p>sharad@example.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                ></path>
+              </svg>
+              <div>
+                <h4>Phone</h4>
+                <p>+1 (555) 123-4567</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+              <div>
+                <h4>Location</h4>
+                <p>San Francisco, CA</p>
+              </div>
+            </div>
+            <div>
+              <h4>Follow Me</h4>
+              <div class="social-links">
+                <a href="#" class="social-link">
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"
+                    ></path>
+                  </svg>
+                </a>
+                <a href="#" class="social-link">
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    ></path>
+                  </svg>
+                </a>
+                <a href="#" class="social-link">
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.441 16.892c-2.102.144-6.784.144-8.883 0-2.276-.156-2.541-1.27-2.558-4.892.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0 2.277.156 2.541 1.27 2.559 4.892-.018 3.629-.285 4.736-2.559 4.892zm-6.441-7.234l4.917 2.338-4.917 2.346v-4.684z"
+                    ></path>
+                  </svg>
+                </a>
+                <a href="#" class="social-link">
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.441 16.892c-2.102.144-6.784.144-8.883 0-2.276-.156-2.541-1.27-2.558-4.892.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0 2.277.156 2.541 1.27 2.559 4.892-.018 3.629-.285 4.736-2.559 4.892zm-6.441-7.234l4.917 2.338-4.917 2.346v-4.684z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">Sharad Aeshi</div>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 Sharad Aeshi. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .querySelector(".mobile-menu-button")
+        .addEventListener("click", function () {
+          console.log("Mobile menu clicked");
+        });
+    </script>
+  </body>
+</html>
